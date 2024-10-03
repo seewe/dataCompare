@@ -1,0 +1,4 @@
+docker build -f Dockerfile_base --progress=plain -t datacompare_base .
+docker build -f Dockerfile --progress=plain -t datacompare:latest .
+docker run -p 8081:8081 datacompare:latest
+# then go to 127.0.0.1:8081
