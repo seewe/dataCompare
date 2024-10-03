@@ -6,10 +6,18 @@
 \alias{dataCompare-package}
 \title{dataCompare: data Comparison}
 \description{
-Application to compare two data frame and provide differences.
+A shiny app use to compare two data frame and provide more details on differences.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/seewe/dataCompare}
+  \item Report bugs at \url{https://github.com/seewe/dataCompare/issues}
+}
+
 }
 \author{
-\strong{Maintainer}: Sergio Ewane \email{info@dataforknow.com}
+\strong{Maintainer}: Sergio Ewane Ebouele \email{info@dataforknow.com}
 
 }
 \keyword{internal}
