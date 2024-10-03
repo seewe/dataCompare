@@ -2,11 +2,13 @@ Package: dataCompare
 Title: data Comparison
 Version: 1.0.0
 Authors@R: 
-    person("Sergio", "Ewane", , "info@dataforknow.com", role = c("cre", "aut"))
+    person("Sergio", "Ewane Ebouele", , "info@dataforknow.com", role = c("aut", "cre"))
 Author: seewe
-Description: Application to compare two data frame and provide
-    differences.
+Description: A shiny app use to compare two data frame and provide more
+    details on differences.
 License: MIT + file LICENSE
+URL: https://github.com/seewe/dataCompare
+BugReports: https://github.com/seewe/dataCompare/issues
 Imports: 
     arsenal,
     config,

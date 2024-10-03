@@ -50,11 +50,13 @@ graveler::level_up(name = "comp_details")
 golem::fill_desc(
   pkg_name = "dataCompare",
   pkg_title = "data Comparison",
-  pkg_description = "Application to compare two data frame and provide differences.",
+  pkg_description = "A shiny app use to compare two data frame and provide more details on differences.",
   pkg_version = '1.0.0',
-  author_first_name = 'Sergio', 
-  author_last_name = 'Ewane', 
-  author_email = 'info@dataforknow.com'
+  authors = person(given = 'Sergio', 
+                   family = 'Ewane Ebouele',
+                   email = 'info@dataforknow.com',
+                   role = c("aut", "cre") ),
+  repo_url = "https://github.com/seewe/dataCompare",
   )
 
 ## 1.7 fill the licence
