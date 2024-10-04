@@ -1,11 +1,9 @@
 Package: dataCompare
-Title: data Comparison
+Title: Data Comparison
 Version: 1.0.0
 Authors@R: 
     person("Sergio", "Ewane Ebouele", , "info@dataforknow.com", role = c("aut", "cre"))
-Author: seewe
-Description: A shiny app use to compare two data frame and provide more
-    details on differences.
+Description: A shiny app use to compare two data frame and provide more details on differences.
 License: MIT + file LICENSE
 URL: https://github.com/seewe/dataCompare
 BugReports: https://github.com/seewe/dataCompare/issues

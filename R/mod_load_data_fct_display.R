@@ -1,5 +1,10 @@
 #' Skim a dataset and return only numeric variables characteristics
 #' @param the_data Data on which the skim function will apply the description on numeric variables
+#' @return a dataframe
+#' @examples
+#' skim_num(iris)
+#' skim_num(mtcars)
+#' 
 #' @export
 
 skim_num <- function(the_data){
@@ -19,6 +24,11 @@ skim_num <- function(the_data){
 
 #' Skim a dataset and return only characters variables characteristics
 #' @param the_data Data on which the skim function will apply the description on character variables
+#' @returns a dataframe
+#' @examples
+#' skim_char(iris)
+#' skim_char(mtcars)
+#' 
 #' @export
 
 skim_char <- function(the_data){
@@ -39,6 +49,9 @@ skim_char <- function(the_data){
 #' Detect common variables in two dataset
 #' @param df1 the first dataset to use
 #' @param df2 The second dataset to use
+#' @examples 
+#' same_variables(iris, iris)
+#' same_variables(mtcars, mtcars)
 #' @export
 
 same_variables <- function(df1, df2){
@@ -84,6 +97,7 @@ same_variables <- function(df1, df2){
 #' @param input_file_data the link of the data to load
 #' @param file_sep the separator used to read the csv data. Possible values are :
 #'                 semi column";", comma"," or column":"
+#' @return a dataframe read from user input or a validation message
 
 read_loaded_df <- function(input_file_data, file_sep = ";"){
   ext <- tools::file_ext(input_file_data$name)
@@ -99,6 +113,8 @@ read_loaded_df <- function(input_file_data, file_sep = ";"){
 #' Datatable formatter, to print on the screen
 #' @param df dataframe to format
 #' @param n_page number of rows to display per page
+#' @return a formated dataframe to print on UI
+#' @example data_table_formatter(iris, 10)
 #' @export
 
 data_table_formatter <- function(df, n_page = 5){
@@ -123,6 +139,12 @@ data_table_formatter <- function(df, n_page = 5){
 #' @param df1 The first dataframe of the comparison
 #' @param df2 The second dataframe of the comparison
 #' @param id_var Tve vector of id variable to identify the observations
+#' @return a list of comparison output
+#' @example 
+#' compare_data_frame_object(
+#'      iris %>% mutate(ID = row_number()), 
+#'      iris %>% mutate(ID = row_number()), 
+#'      'ID')
 #' @export
 
 compare_data_frame_object <- function(df1, df2, id_var){

@@ -49,7 +49,7 @@ graveler::level_up(name = "comp_details")
 
 golem::fill_desc(
   pkg_name = "dataCompare",
-  pkg_title = "data Comparison",
+  pkg_title = "Data Comparison",
   pkg_description = "A shiny app use to compare two data frame and provide more details on differences.",
   pkg_version = '1.0.0',
   authors = person(given = 'Sergio', 
