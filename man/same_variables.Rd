@@ -14,3 +14,7 @@ same_variables(df1, df2)
 \description{
 Detect common variables in two dataset
 }
+\examples{
+same_variables(iris, iris)
+same_variables(mtcars, mtcars)
+}

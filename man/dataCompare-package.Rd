@@ -4,7 +4,7 @@
 \name{dataCompare-package}
 \alias{dataCompare}
 \alias{dataCompare-package}
-\title{dataCompare: data Comparison}
+\title{dataCompare: Data Comparison}
 \description{
 A shiny app use to compare two data frame and provide more details on differences.
 }

@@ -9,6 +9,14 @@ skim_char(the_data)
 \arguments{
 \item{the_data}{Data on which the skim function will apply the description on character variables}
 }
+\value{
+a dataframe
+}
 \description{
 Skim a dataset and return only characters variables characteristics
+}
+\examples{
+skim_char(iris)
+skim_char(mtcars)
+
 }

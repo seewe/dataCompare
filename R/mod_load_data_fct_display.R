@@ -114,7 +114,8 @@ read_loaded_df <- function(input_file_data, file_sep = ";"){
 #' @param df dataframe to format
 #' @param n_page number of rows to display per page
 #' @return a formated dataframe to print on UI
-#' @example data_table_formatter(iris, 10)
+#' @examples 
+#' data_table_formatter(iris, 10)
 #' @export
 
 data_table_formatter <- function(df, n_page = 5){
@@ -140,10 +141,11 @@ data_table_formatter <- function(df, n_page = 5){
 #' @param df2 The second dataframe of the comparison
 #' @param id_var Tve vector of id variable to identify the observations
 #' @return a list of comparison output
-#' @example 
+#' @examples 
+#' library(dplyr)
 #' compare_data_frame_object(
-#'      iris %>% mutate(ID = row_number()), 
-#'      iris %>% mutate(ID = row_number()), 
+#'      iris %>% dplyr::mutate(ID = row_number()), 
+#'      iris %>% dplyr::mutate(ID = row_number()), 
 #'      'ID')
 #' @export
 

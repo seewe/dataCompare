@@ -13,6 +13,16 @@ compare_data_frame_object(df1, df2, id_var)
 
 \item{id_var}{Tve vector of id variable to identify the observations}
 }
+\value{
+a list of comparison output
+}
 \description{
 Function which perform the comparison of dataframe
+}
+\examples{
+library(dplyr)
+compare_data_frame_object(
+     iris \%>\% dplyr::mutate(ID = row_number()), 
+     iris \%>\% dplyr::mutate(ID = row_number()), 
+     'ID')
 }

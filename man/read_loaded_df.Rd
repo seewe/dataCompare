@@ -12,6 +12,9 @@ read_loaded_df(input_file_data, file_sep = ";")
 \item{file_sep}{the separator used to read the csv data. Possible values are :
 semi column";", comma"," or column":"}
 }
+\value{
+a dataframe read from user input or a validation message
+}
 \description{
 read data loaded from an input file
 }
