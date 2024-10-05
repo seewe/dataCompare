@@ -1,0 +1,140 @@
+---
+title: "Data Comparator : compare values of two dataframe"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dataCompare}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r , echo=FALSE, out.width="40%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/dfComparator_vignette.png")
+```
+
+
+
+# Overview
+
+Data scientists always used data to generate insight. They develope models to explain or predict an output variables with input feature.  
+Sometime, they develope pipelines to complete an End to End process. Going from raw data to final prediction or Scoring involve many 
+steps :  
+
+  1- Data loading  
+  2- Data preprocessing  or transformation  
+  3- Model training   
+  4- Model prediction  
+  5- Post models prediction logic : pridction agregation, indicators calculation and segmentation  
+  
+Each of these steps generate data called here `Intermediate results` or `Final output`.  
+
+Most of the time, machine learning models are standalone object shared through API with other applications.  
+To make sure the deployed API pipeline looks exactly like the modeler's pipeline, we need to compare their outputs.  
+Here, **`Data For Know (D4K)`** proposed a graphical way to perform the comparison of the two pipelines.  
+**`dataCompare`** is a tool used to compare two machine learning pipelines outputs. It help to check if the pipelines
+are similar or not.  
+
+```{r , echo=FALSE, out.width="98%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/context.png")
+```
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Presentation
+
+dataCompare is a shiny app, develop with the Golem framework. It is used to check values differencies between two dataframe. The code bellow shows how to install it from Github and CRAN.  
+
+## Install and Load
+
+
+```{r setup, eval=FALSE}
+# From Cran
+install.packages('dataCompare')
+
+# From Github
+install_github('seewe/dataCompare')
+
+# Load in the environment
+library(dataCompare)
+```
+
+
+## Run the app with the following code
+
+```{r eval=FALSE}
+dataCompare::run_app()
+```
+
+
+```{r , echo=FALSE, out.width="98%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/mainPage.png")
+```
+  
+  
+# App description
+
+The `dataCompare` app has three tabs to provide the insight :  
+  - Load data  
+  - Comparison description
+  - Details on difference  
+
+## Load data  
+
+This tab allows user to load data and run the comparison of loaded data.  
+
+**INPUTS** : Upload inputs help to load data in the app. The extensions accepted here are : .csv, .tsv and .rds  
+For .csv files, make sure to specify the right seperator `(';', ',', ':')`.  
+  
+After the user load the data, he can heat on  **`>COMPARE`** button to run the comparison.
+The value box bellow the input box will shows the percentage of difference and will be colored according to the value.  
+
+```{r , echo=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/dataLoader.png")
+```
+
+
+**OUTPUTS** : A high level description of data loaded through the uploader. Here, user may find :
+variables names, variables types, the complete rate, the distribution or the number of unique values. 
+  
+  
+
+```{r , echo=FALSE, out.width="98%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/afterClickCompare.png")
+```
+
+
+## Comparison description  
+
+This tab allows user to read the first results of the comparison.  
+**OUTPUTS** : several tables are displayed here :  
+-> table of input data dimension, which shows the number of rows and columns of data to compare  
+-> table of comparison summary, which shows values of comparison indicator  
+-> table of number of difference by variable, which shows the number of difference by variables in data  
+-> table of variables not compared, which shows the variables of each input data which are not compare to others.  
+  
+
+```{r , echo=FALSE, out.width="98%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/comparisonDescription.png")
+```
+
+## Details on difference  
+
+This tab allows user to read the differences between input data cell by cell.  
+**OUTPUTS** : several tables are displayed here :  
+-> table of attributes, which shows non identical attributes between the two data  
+-> table of not shared variables, which shows variables in X but not in Y and present in Y but not in X  
+-> table of not shared observations, which shows the observations not shared between the two data  
+-> table of detected differences, which shows all the differences in the data row by row.   
+  
+
+```{r , echo=FALSE, out.width="98%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/detailsDifferences.png")
+```
+
+

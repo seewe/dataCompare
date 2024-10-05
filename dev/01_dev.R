@@ -94,3 +94,12 @@ usethis::use_import_from("vroom", c("spec"))
 
 utils::globalVariables(".")
 
+## 1.12 add vignette
+
+usethis::use_vignette("dataCompare")
+
+
+
+
+
+
