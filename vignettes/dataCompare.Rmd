@@ -73,7 +73,7 @@ dataCompare::run_data_compare_app()
 
 
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
-knitr::include_graphics("../inst/app/www/mainPage.png")
+knitr::include_graphics("../inst/app/www/mainPage.PNG")
 ```
   
   
@@ -95,7 +95,7 @@ After the user load the data, he can heat on  **`>COMPARE`** button to run the c
 The value box bellow the input box will shows the percentage of difference and will be colored according to the value.  
 
 ```{r , echo=FALSE, out.width="70%", fig.align='center'}
-knitr::include_graphics("../inst/app/www/dataLoader.png")
+knitr::include_graphics("../inst/app/www/dataLoader.PNG")
 ```
 
 
@@ -105,7 +105,7 @@ variables names, variables types, the complete rate, the distribution or the num
   
 
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
-knitr::include_graphics("../inst/app/www/afterClickCompare.png")
+knitr::include_graphics("../inst/app/www/afterClickCompare.PNG")
 ```
 
 
@@ -120,7 +120,7 @@ This tab allows user to read the first results of the comparison.
   
 
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
-knitr::include_graphics("../inst/app/www/comparisonDescription.png")
+knitr::include_graphics("../inst/app/www/comparisonDescription.PNG")
 ```
 
 ## Details on difference  
@@ -134,6 +134,6 @@ This tab allows user to read the differences between input data cell by cell.
   
 
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
-knitr::include_graphics("../inst/app/www/detailsDifferences.png")
+knitr::include_graphics("../inst/app/www/detailsDifferences.PNG")
 ```
 
