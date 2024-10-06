@@ -9,15 +9,27 @@ mod_comp_details_ui <- function(id) {
 	tabItem(
 		tabName = "comp_details",
 		column(4,
-		       box(title = "Non-identical attributes", width = 12, DT::DTOutput(ns("attrs_table"))),
+		       box(title = "Non-identical attributes", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("attrs_table"))),
 		       br(),
-		       box(title = "Variable not shared", width = 12, DT::DTOutput(ns("vars_ns_table"))),
+		       box(title = "Variable not shared", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("vars_ns_table"))),
 		       br(),
-		       box(title = "Observations not shared", width = 12, DT::DTOutput(ns("obs_table")))
+		       box(title = "Observations not shared", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("obs_table")))
 		       
 		),
 		column(8,
-		       box(title = "Differences detected", width = 12, DT::DTOutput(ns("diffs_table")))
+		       box(title = "Differences detected", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("diffs_table")))
 		)
 	)
 }

@@ -1,7 +1,6 @@
 ## 1.1 Add dependencies
 
 pkgs <- c(
-  "dashboardthemes",
   'devtools',
   'pins',
   "dplyr",
@@ -18,7 +17,8 @@ pkgs <- c(
   "data.table",
   "arsenal",
   "config",
-  "utils"
+  "utils",
+  "htmltools"
 )
 
 for (i in pkgs) {
@@ -98,7 +98,8 @@ utils::globalVariables(".")
 
 usethis::use_vignette("dataCompare")
 
-
+## 1.13 test 
+usethis::use_testthat(3)
 
 
 

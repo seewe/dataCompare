@@ -1,6 +1,5 @@
 
 pkgs <- c(
-  "dashboardthemes",
   "devtools",
   "dplyr",
   "lubridate",
@@ -15,7 +14,9 @@ pkgs <- c(
   "vroom",
   "DT",
   "data.table",
-  "arsenal"
+  "arsenal",
+  "utils",
+  "htmltools"
 )
 
 for (i in pkgs) {

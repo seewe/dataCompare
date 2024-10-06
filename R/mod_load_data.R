@@ -12,7 +12,10 @@ mod_load_data_ui <- function(id) {
 		
 		fluidRow(
 		  column(3,
-		         box(title = "Panel for input data (.rds, .csv or .tsv)", width = 12, 
+		         box(title = "Panel for input data (.rds, .csv or .tsv)", 
+		             width = 12,
+		             background = "black",
+		             collapsible = TRUE, 
 		             br(),
 		             radioGroupButtons(
 		               inputId = ns("file_separ"),
@@ -42,18 +45,28 @@ mod_load_data_ui <- function(id) {
 		         ),
 		  column(9,
 		         fluidRow(
-		            shinydashboard::box(title = "Numeric variables in data 1", width = 6,
+		            box(title = "Numeric variables in data 1", 
+		                                width = 6,
+		                                background = "black",
+		                                collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_1_num"))
 		           ),
-		           box(title = "Numeric variables in data 2", width = 6,
+		           box(title = "Numeric variables in data 2", 
+		               width = 6,
+		               background = "black",
+		               collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_2_num"))
 		           )
 		         ),
 		         fluidRow(
-		           shinydashboardPlus::box(title = "Character variables in data 1", width = 6,
+		           box(title = "Character variables in data 1", width = 6,
+		               background = "black",
+		               collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_1_char"))
 		           ),
 		           box(title = "Character variables in data 2", width = 6,
+		               background = "black",
+		               collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_2_char"))
 		           )
 		         )

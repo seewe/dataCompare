@@ -68,7 +68,7 @@ library(dataCompare)
 ## Run the app with the following code
 
 ```{r eval=FALSE}
-dataCompare::run_app()
+dataCompare::run_data_compare_app()
 ```
 
 
@@ -136,5 +136,4 @@ This tab allows user to read the differences between input data cell by cell.
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
 knitr::include_graphics("../inst/app/www/detailsDifferences.png")
 ```
-
 

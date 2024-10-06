@@ -10,7 +10,7 @@ mod_intro_ui <- function(id) {
 		tabName = "intro",
 		fluidRow(
 			column(width = 6,
-			       img(src = "www/dfComparator.png", width="100%")
+			       img(src = "www/dfComparator_vignette.png", width="100%")
 			       ),
 			column(width = 6,
 			       box(

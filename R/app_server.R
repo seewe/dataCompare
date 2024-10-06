@@ -1,12 +1,11 @@
 
 app_server <- function(input, output, session) {
   
-  
   callModule(mod_intro_server, "intro_ui_1")
   
   rv <- reactiveValues(
     comparison_summary_object = list(),
-    diff_percentage = NA_real_,
+    diff_percentage = NA_real_
     
   )
   

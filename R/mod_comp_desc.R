@@ -9,13 +9,25 @@ mod_comp_desc_ui <- function(id) {
 	tabItem(
 		tabName = "comp_desc",
 		column(6,
-		       box(title = "Dimension of tables to compare", width = 12, DT::DTOutput(ns("frame_summary_table"))),
-		       box(title = "Comparison summary table", width = 12, DT::DTOutput(ns("comparison_summary_table")))
+		       box(title = "Dimension of tables to compare", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("frame_summary_table"))),
+		       box(title = "Comparison summary table", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("comparison_summary_table")))
 		       ),
 		column(6,
-		       box(title = "Description of difference by variable", width = 12, DT::DTOutput(ns("diffs_byvar_table"))),
+		       box(title = "Description of difference by variable", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("diffs_byvar_table"))),
 		       br(),
-		       box(title = "Variables not compared", width = 12, DT::DTOutput(ns("vars_nc_table")))
+		       box(title = "Variables not compared", width = 12,
+		           background = "black",
+		           collapsible = TRUE,
+		           DT::DTOutput(ns("vars_nc_table")))
 		       )
 	)
 }
