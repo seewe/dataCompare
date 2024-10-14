@@ -49,8 +49,15 @@ graveler::level_up(name = "comp_details")
 
 golem::fill_desc(
   pkg_name = "dataCompare",
-  pkg_title = "Data Comparison",
-  pkg_description = "A shiny app use to compare two data frame and provide more details on differences.",
+  pkg_title = "A 'shiny' app to compare two data frames",
+  pkg_description = "The 'dataCompare' package is a 'shiny' application developed with the 'Golem' framework.
+                     It provides a graphical tool for checking value differences between two data frames.
+                     The user provides two data frames for comparison, selects IDs variables identifying each row of input data, 
+                     then clicks a button to perform the comparison. Several 'R' package functions are used to describe the data 
+                     and perform the comparison in the backend of the application. The main ones are 'comparedf()' from 'arsenal' 
+                     and 'skim()' from 'skimr'. 
+                     See the description of 'comparedf()' from the 'arsenal' package here <https://cran.r-project.org/web/packages/arsenal/vignettes/comparedf.html> 
+                     and that of 'skim()' from the 'skimr' package here <https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html>."  ,
   pkg_version = '1.0.0',
   authors = person(given = 'Sergio', 
                    family = 'Ewane Ebouele',

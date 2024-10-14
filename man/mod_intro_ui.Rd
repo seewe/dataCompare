@@ -9,6 +9,9 @@ mod_intro_ui(id)
 \arguments{
 \item{id}{an id}
 }
+\value{
+No return value
+}
 \description{
 A shiny module.
 }

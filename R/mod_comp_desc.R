@@ -3,6 +3,7 @@
 #' @title mod_comp_desc_ui and mod_comp_desc_server
 #' @description A shiny module.
 #' @param id an id
+#' @returns No return value
  
 mod_comp_desc_ui <- function(id) {
 	ns <- NS(id)

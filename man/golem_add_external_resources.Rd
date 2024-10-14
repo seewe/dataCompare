@@ -6,6 +6,9 @@
 \usage{
 golem_add_external_resources()
 }
+\value{
+No return value, called for side effects
+}
 \description{
 This function is internally used to add external
 resources inside the Shiny application.

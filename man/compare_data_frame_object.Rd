@@ -11,10 +11,10 @@ compare_data_frame_object(df1, df2, id_var)
 
 \item{df2}{The second dataframe of the comparison}
 
-\item{id_var}{Tve vector of id variable to identify the observations}
+\item{id_var}{Tve vector of id variable to identify the observations in df1 and df2}
 }
 \value{
-a list of comparison output
+An object of class "comparedf" as made by the 'comparedf' S3 method is returned.
 }
 \description{
 Function which perform the comparison of dataframe

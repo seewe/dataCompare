@@ -5,6 +5,7 @@
 #'
 #' @import shiny
 #' @importFrom golem add_resource_path activate_js favicon bundle_resources
+#' @returns No return value, called for side effects
 #' @export
 golem_add_external_resources <- function(){
   add_resource_path(

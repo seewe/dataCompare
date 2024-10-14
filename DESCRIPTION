@@ -1,10 +1,16 @@
 Package: dataCompare
-Title: Data Comparison
+Title: A 'shiny' app to compare two data frames
 Version: 1.0.0
 Authors@R: 
     person("Sergio", "Ewane Ebouele", , "info@dataforknow.com", role = c("aut", "cre"))
-Description: A shiny app use to compare two data frame and provide more
-    details on differences.
+Description: The 'dataCompare' package is a 'shiny' application developed with the 'Golem' framework.
+                     It provides a graphical tool for checking value differences between two data frames.
+                     The user provides two data frames for comparison, selects IDs variables identifying each row of input data, 
+                     then clicks a button to perform the comparison. Several 'R' package functions are used to describe the data 
+                     and perform the comparison in the backend of the application. The main ones are 'comparedf()' from 'arsenal' 
+                     and 'skim()' from 'skimr'. 
+                     See the description of 'comparedf()' from the 'arsenal' package here <https://cran.r-project.org/web/packages/arsenal/vignettes/comparedf.html> 
+                     and that of 'skim()' from the 'skimr' package here <https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html>.
 License: MIT + file LICENSE
 URL: https://github.com/seewe/dataCompare
 BugReports: https://github.com/seewe/dataCompare/issues

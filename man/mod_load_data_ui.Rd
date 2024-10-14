@@ -9,6 +9,9 @@ mod_load_data_ui(id)
 \arguments{
 \item{id}{an id}
 }
+\value{
+No return value
+}
 \description{
 A shiny module.
 }

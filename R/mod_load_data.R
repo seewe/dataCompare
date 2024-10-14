@@ -3,6 +3,7 @@
 #' @title mod_load_data_ui and mod_load_data_server
 #' @description A shiny module.
 #' @param id an id
+#' @returns No return value
  
 mod_load_data_ui <- function(id) {
 	ns <- NS(id)

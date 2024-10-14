@@ -10,7 +10,7 @@ skim_char(the_data)
 \item{the_data}{Data on which the skim function will apply the description on character variables}
 }
 \value{
-a dataframe
+a data.frame object containing description of all character (factor, character or date) variable in the input data.
 }
 \description{
 Skim a dataset and return only characters variables characteristics
