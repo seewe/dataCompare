@@ -5,3 +5,5 @@ cranReports/*
 .github
 inst/doc
 
+/doc/
+/Meta/

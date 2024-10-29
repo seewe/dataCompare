@@ -126,12 +126,25 @@ mod_load_data_server <- function(input, output, session) {
 	# Indicator on dataframe comparison
 	output$comparatorBox <- renderValueBox({
 	  
-	  val_box_col <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "black", rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "fuchsia", .default = "green")
-	  val_box_ico <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "minus", rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "remove", .default = "ok")
+	  val_box_col <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "black", 
+	                           rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "fuchsia", 
+	                           .default = "green")
+	  val_box_ico <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "minus", 
+	                           rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "remove", 
+	                           .default = "ok")
 	  
 	  valueBox(
-	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), "No comparison", paste0(rv_loaded_data$comparison_summary_object$diff_percentage, "%")  ),
-	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), "indicator of diference is Not Available", "Of cells are diferent"),
+	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), 
+	            "No comparison", 
+	            paste0(rv_loaded_data$comparison_summary_object$diff_percentage, "%")  ),
+	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), 
+	            "indicator of diference is Not Available. 
+	             Please load data first, select IDs variables,
+	             then click on 'COMPARE' button to perform 
+	             the comparison.", 
+	            "Of cells are diferent. Please open the 
+	            two nexts tabs to read more details on 
+	            this differences percentage."),
 	    icon = icon(val_box_ico, lib = "glyphicon"),
 	    color = val_box_col
 	  )

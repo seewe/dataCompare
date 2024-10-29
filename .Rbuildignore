@@ -16,3 +16,5 @@
 ^\.dockerignore$
 ^\./deploy$
 ^cran-comments\.md$
+^doc$
+^Meta$

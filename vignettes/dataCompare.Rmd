@@ -1,5 +1,5 @@
 ---
-title: "dataCompare : a 'shiny' app to compare two 'data.frames'"
+title: "dataCompare"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{dataCompare}
