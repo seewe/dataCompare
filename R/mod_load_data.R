@@ -142,12 +142,12 @@ mod_load_data_server <- function(input, output, session) {
 	            "indicator of diference is Not Available. 
 	             Please load data first, select IDs variables,
 	             then click on 'COMPARE' button to perform 
-	             the comparison or click on 'REPORT' button to download
-	             the html report.", 
-	            "Of cells are diferent. Please click on 'REPORT' 
-	             button to download the html report or open the 
+	             the comparison.", 
+	            "Of cells are diferent. Please open the 
 	             two nexts tabs to read more details on 
-	             this differences percentage."),
+	             this differences percentage. open the fourth tab and
+	             click on 'RUN' to build the html report  
+	             then on 'SAVE' to download the html report"),
 	    icon = icon(val_box_ico, lib = "glyphicon"),
 	    color = val_box_col
 	  )
