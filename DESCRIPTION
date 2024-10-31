@@ -1,6 +1,6 @@
 Package: dataCompare
 Title: A 'shiny' App to Compare Two Data Frames
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person("Sergio", "Ewane Ebouele", , "info@dataforknow.com", role = c("aut", "cre"))
 Description: A tool developed with the 'Golem' framework which provides 

@@ -1,13 +1,20 @@
 ---
 title: "dataCompare"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette:
+    toc: true
 vignette: >
   %\VignetteIndexEntry{dataCompare}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r , echo=FALSE, out.width="40%", fig.align='center'}
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+```
+
+
+```{r , echo=FALSE, out.width="35%", fig.align='left'}
 knitr::include_graphics("../inst/app/www/dfComparator_vignette.png")
 ```
 
@@ -52,7 +59,7 @@ knitr::opts_chunk$set(
 ## Install and Load
 
 
-```{r setup, eval=FALSE}
+```{r eval=FALSE}
 # From Cran
 install.packages('dataCompare')
 
@@ -76,7 +83,7 @@ knitr::include_graphics("../inst/app/www/mainPage.PNG")
 ```
   
   
-# App description
+# Shiny App description
 
 The `dataCompare` application has three tabs for viewing:  
   - Load data  
@@ -133,5 +140,153 @@ This tab allows the user to read the differences between the input data, cell by
 
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
 knitr::include_graphics("../inst/app/www/detailsDifferences.PNG")
+```
+
+
+## Comparison report
+
+This tab allows the user to compile the html report and download it in his local storage.
+**INPUT** : Several fields are shown here:
+-> Title of the report : User need to provide a title to the report.
+-> Author name : user need to provide his name here
+-> Report context : User need to provide a small paragraph which describe the context or purpose of the report
+**OUTPUTS** : After clicking on 'RUN' button, the html report will appear at the middle of the boby and a 'SAVE' button will appear to download the report.
+**NOTE** : This report is interactive. user can update it by entering new values and click on 'RUN'. 
+
+
+```{r , echo=FALSE, out.width="98%", fig.align='center'}
+knitr::include_graphics("../inst/app/www/comparisonReport.PNG")
+```
+
+
+# Inline code description
+
+Beyond the shiny app, users can run some function of `dataCompare` to perform certain tasks.  
+Let us define two dataframe from the `iris` dataframe.
+
+## Sample dataframe
+
+```{r}
+iris_1 <- iris %>% dplyr::mutate(
+  var_add1 = sample.int(nrow(iris), replace = TRUE),
+  var_add2 = rnorm(nrow(iris)),
+  var_add3 = sample(c("cat1", "cat2", "cat3"), nrow(iris), replace = TRUE)
+)
+iris_1 <- iris_1 %>% 
+  rbind.data.frame(
+    iris_1 %>% dplyr::sample_n(50)
+  ) %>% 
+  dplyr::mutate(
+    ID = row_number()
+  )
+
+iris_2 <- iris %>% dplyr::mutate(
+  var_more = sample(c("cat1", "cat2", "cat3"), nrow(iris), replace = TRUE),
+  var_add3 = sample.int(nrow(iris), replace = TRUE)
+)
+iris_2 <- iris_2  %>% rbind.data.frame(
+    iris_2 %>% dplyr::sample_n(50)
+  ) %>% 
+  dplyr::mutate(
+    ID = row_number()
+  )
+```
+
+
+
+## Format a dataframe
+
+```{r}
+dataCompare::data_table_formatter(iris)
+```
+
+## List same variables in two dataframe
+
+This function returns all variable with the same name and type in two dataframe. The example bellow doesn't shows `var_add3` in the list because it's character in iris_1 and integer in iris_2.
+
+```{r}
+dataCompare::same_variables(iris_1, iris_2)
+```
+
+
+## Describe character variables in a dataframe
+
+This function use the `skim` function in `skimr` package.
+
+```{r}
+dataCompare::skim_char(iris_1) %>% dataCompare::data_table_formatter(.)
+```
+
+
+## Describe numeric variables in a dataframe
+
+This function use the `skim` function in `skimr` package.
+
+```{r}
+dataCompare::skim_num(iris_1) %>% dataCompare::data_table_formatter(.)
+```
+
+
+## Compare two dataframe cells values {.tabset}
+
+
+```{r}
+comparison <- dataCompare::compare_data_frame_object(iris_1, iris_2, "ID")
+```
+
+The outputs of the comparison are listed here :  
+
+### result 1 : difference percentage
+
+```{r echo=FALSE}
+ comparison$diff_percentage
+```
+
+### result 2 : frame summary table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$frame.summary.table )
+```
+
+### result 3 : attributs table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$attrs.table )
+```
+
+### result 4 : comparison summary table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$comparison.summary.table )
+```
+
+### result 5 : variables not shared table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$vars.ns.table )
+```
+
+### result 6 : variables not compared table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$vars.nc.table )
+```
+
+### result 7 : observations table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$obs.table )
+```
+
+### result 8 : differences by variables table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$diffs.byvar.table )
+```
+
+### result 9 : differences by observation table
+
+```{r echo=FALSE}
+dataCompare::data_table_formatter( comparison$diffs.table )
 ```
 

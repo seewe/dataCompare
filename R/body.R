@@ -15,7 +15,8 @@ body <- function() {
       mod_intro_ui("intro_ui_1"),
       mod_load_data_ui("load_data_ui_1"),
       mod_comp_desc_ui("comp_desc_ui_1"),
-      mod_comp_details_ui("comp_details_ui_1")
+      mod_comp_details_ui("comp_details_ui_1"),
+      mod_comp_report_ui("comp_report_ui_1")
     )
   )
 }

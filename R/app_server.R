@@ -23,9 +23,14 @@ app_server <- function(input, output, session) {
     rv$comparison_summary_object$attrs_table <- data_comparator_result$comparison_summary_object$attrs.table
     rv$comparison_summary_object$diff_percentage <- data_comparator_result$comparison_summary_object$diff_percentage
     rv$click_on_run <- data_comparator_result$click_on_run
+    rv$df1 <- data_comparator_result$df1
+    rv$df2 <- data_comparator_result$df2
+    rv$ids <- data_comparator_result$ids
   })
   
   callModule(mod_comp_desc_server, "comp_desc_ui_1", RV = reactive(rv))
   
   callModule(mod_comp_details_server, "comp_details_ui_1", RV = reactive(rv))
+  
+  callModule(mod_comp_report_server, "comp_report_ui_1", RV = reactive(rv))
 }

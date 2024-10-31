@@ -1,13 +1,13 @@
 dataComparator
 ================
 Sergio, Ewane Ebouele
-2024-10-03 00:07:26.767904
+2024-10-31 01:02:03.153755
 
 # Presentation
 
 A shiny app used to check values differencies between two dataframe.
-This app have three main tabs :  
-![dataCompare](./inst/app/www/dfComparator.png)
+This app have four main tabs :  
+![dataCompare](../www/dfComparator.png)
 
 # Load data section
 
@@ -48,3 +48,15 @@ Y and present in Y but not in X
 shared between the two data  
 -\> table of detected differences, which shows all the differences in
 the data row by row.
+
+# Comparison report
+
+This tab allows the user to compile the html report and download it in
+his local storage. INPUT : Several fields are shown here: -\> Title of
+the report : User need to provide a title to the report. -\> Author name
+: user need to provide his name here -\> Report context : User need to
+provide a small paragraph which describe the context or purpose of the
+report OUTPUTS : After clicking on ‘RUN’ button, the html report will
+appear at the middle of the boby and a ‘SAVE’ button will appear to
+download the report. NOTE : This report is interactive. user can update
+it by entering new values and click on ‘RUN’.

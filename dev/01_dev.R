@@ -44,6 +44,7 @@ graveler::level_up(name = "intro")
 graveler::level_up(name = "load_data")
 graveler::level_up(name = "comp_desc")
 graveler::level_up(name = "comp_details")
+graveler::level_up(name = "comp_report")
 
 ## 1.6 fill the description file
 
@@ -61,7 +62,7 @@ golem::fill_desc(
                      and skim() from 'skimr'. For more details see the 
                      description of comparedf() from the 'arsenal' package and 
                      that of skim() from the 'skimr' package.",
-  pkg_version = '1.0.0',
+  pkg_version = '1.0.1',
   authors = person(given = 'Sergio', 
                    family = 'Ewane Ebouele',
                    email = 'info@dataforknow.com',
@@ -101,6 +102,11 @@ usethis::use_import_from("pins", c("pin"))
 usethis::use_import_from("shinyWidgets", c("actionBttn", "radioGroupButtons"))
 usethis::use_import_from("shinyjs", c("alert"))
 usethis::use_import_from("vroom", c("spec"))
+
+usethis::use_import_from("shiny", c("callModule", "reactiveValues", "observeEvent", "req", "reactive", "span", "validate", 
+                                    "NS", "column", "fluidRow", "renderUI", "icon", "fileInput", "uiOutput", "actionButton", "shinyApp"))
+usethis::use_import_from("htmltools", c("tagList", "tags", "a", "img", "br", "p", "strong"))
+usethis::use_import_from("golem", c("add_resource_path"))
 
 utils::globalVariables(".")
 

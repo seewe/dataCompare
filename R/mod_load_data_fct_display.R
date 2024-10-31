@@ -94,11 +94,7 @@ same_variables <- function(df1, df2){
 }
 
 
-#' read data loaded from an input file
-#' @param input_file_data the link of the data to load
-#' @param file_sep the separator used to read the csv data. Possible values are :
-#'                 semi column";", comma"," or column":"
-#' @return An object of 'data.frame' class read from user input or a validation message
+# read data loaded from an input file
 
 read_loaded_df <- function(input_file_data, file_sep = ";"){
   ext <- tools::file_ext(input_file_data$name)
@@ -127,6 +123,7 @@ data_table_formatter <- function(df, n_page = 5){
               options = list(
                 dom = 'ftp',
                 pageLength = n_page,
+                columnDefs = list(list(className = 'dt-center', targets = "_all")),
                 initComplete = JS(
                   "function(settings, json) {",
                   "$(this.api().table().header()).css({'background-color': '#649191', 'color': '#000'});",
@@ -140,7 +137,7 @@ data_table_formatter <- function(df, n_page = 5){
 #' Function which perform the comparison of dataframe
 #' @param df1 The first dataframe of the comparison
 #' @param df2 The second dataframe of the comparison
-#' @param id_var Tve vector of id variable to identify the observations in df1 and df2
+#' @param id_var The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`
 #' @return An object of class "comparedf" as made by the 'comparedf' S3 method is returned.
 #' @examples 
 #' library(dplyr)

@@ -1,10 +1,5 @@
 # Module UI
  
-#' @title mod_intro_ui and mod_intro_server
-#' @description A shiny module.
-#' @param id an id
-#' @returns No return value
- 
 mod_intro_ui <- function(id) {
 	ns <- NS(id)
 	tabItem(
@@ -52,6 +47,21 @@ mod_intro_ui <- function(id) {
 			           " -> table showing the variables present on X but not on Y and on Y but not on X", br(),
 			           " -> Non-shared observations table, showing the observations not shared between the two data", br(),
 			           " -> detected differences table, showing all differences in the data row by row", br()
+			         )
+			       ),
+			       box(
+			         title = "Comparison report", 
+			         width = NULL, 
+			         background = "black",
+			         collapsible = TRUE,
+			         p("This tab allows the user to compile the html report and download it in his local storage.", br(),
+			           strong("INPUT : "),"Several fields are shown here:", br(),
+			           " -> Title of the report : User need to provide a title to the report.", br(),
+			           " -> Author name : user need to provide his name here", br(),
+			           " -> Report context : User need to provide a small paragraph which describe the context or purpose of the report", br(),
+			           strong("OUTPUTS : "),"After clicking on 'RUN' button, the html report will appear at 
+			           the middle of the boby and a 'SAVE' button will appear to download the report.", br(),
+			           strong("NOTE : "), "This report is interactive. user can update it by entering new values and click on 'RUN'."
 			         )
 			       ),
 			       box(
