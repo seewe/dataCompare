@@ -7,7 +7,7 @@ Sergio, Ewane Ebouele
 
 A shiny app used to check values differencies between two dataframe.
 This app have four main tabs :  
-![dataCompare](../www/dfComparator.png)
+![dataCompare](inst/app/www/dfComparator.png)
 
 # Load data section
 
