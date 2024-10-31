@@ -1,4 +1,4 @@
-dataComparator
+dataCompare
 ================
 Sergio, Ewane Ebouele
 2024-10-31 01:02:03.153755
