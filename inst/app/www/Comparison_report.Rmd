@@ -47,52 +47,52 @@ comparison$diff_percentage
 ## frame summary table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$frame.summary.table )
+dataCompare::data_table_formatter( comparison$frame.summary.table, n_page = 20 )
 ```
 
 
 ## attributs table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$attrs.table )
+dataCompare::data_table_formatter( comparison$attrs.table, n_page = 20 )
 ```
 
 
 ## comparison summary table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$comparison.summary.table )
+dataCompare::data_table_formatter( comparison$comparison.summary.table, n_page = 20 )
 ```
 
 
 ## variables not shared table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$vars.ns.table )
+dataCompare::data_table_formatter( comparison$vars.ns.table, n_page = 20 )
 ```
 
 ## variables not compared table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$vars.nc.table )
+dataCompare::data_table_formatter( comparison$vars.nc.table, n_page = 20 )
 ```
 
 ## observations table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$obs.table )
+dataCompare::data_table_formatter( comparison$obs.table, n_page = 20 )
 ```
 
 ## differences by variables table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$diffs.byvar.table )
+dataCompare::data_table_formatter( comparison$diffs.byvar.table, n_page = 20 )
 ```
 
 ## differences by observation table
 
 ```{r echo=FALSE}
-dataCompare::data_table_formatter( comparison$diffs.table )
+dataCompare::data_table_formatter( comparison$diffs.table, n_page = 20 )
 ```
 
 
