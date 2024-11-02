@@ -2,7 +2,7 @@
 docs
 .Rproj.user
 cranReports/*
-#.github
+.github
 inst/doc
 
 /doc/

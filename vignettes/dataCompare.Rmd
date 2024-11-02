@@ -155,7 +155,7 @@ This tab allows the user to compile the html report and download it in his local
 
 
 ```{r , echo=FALSE, out.width="98%", fig.align='center'}
-knitr::include_graphics("../inst/app/www/comparisonReport.PNG")
+knitr::include_graphics("../inst/app/www/ComparisonReport.PNG")
 ```
 
 
