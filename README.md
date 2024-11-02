@@ -6,7 +6,7 @@ Sergio, Ewane Ebouele
 # Presentation
 
 A shiny app used to check values differencies between two dataframe.
-This app have four main tabs :  
+This app has four main tabs :  
 ![dataCompare](inst/app/www/dfComparator.png)
 
 # Load data section
@@ -55,8 +55,8 @@ This tab allows the user to compile the html report and download it in
 his local storage. INPUT : Several fields are shown here: -\> Title of
 the report : User need to provide a title to the report. -\> Author name
 : user need to provide his name here -\> Report context : User need to
-provide a small paragraph which describe the context or purpose of the
+provide a small paragraph which describes the context or purpose of the
 report OUTPUTS : After clicking on ‘RUN’ button, the html report will
 appear at the middle of the boby and a ‘SAVE’ button will appear to
-download the report. NOTE : This report is interactive. user can update
-it by entering new values and click on ‘RUN’.
+download the report. NOTE : This report is interactive. user can updates
+it by entering new values and clicks on ‘RUN’.
