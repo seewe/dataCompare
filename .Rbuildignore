@@ -15,3 +15,9 @@
 ^\./dataCompare_1\.0\.0\.tar\.gz$
 ^\.dockerignore$
 ^\./deploy$
+^cran-comments\.md$
+^doc$
+^Meta$
+^lastMiKTeXException
+^.github
+^CRAN-SUBMISSION$

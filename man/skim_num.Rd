@@ -9,6 +9,14 @@ skim_num(the_data)
 \arguments{
 \item{the_data}{Data on which the skim function will apply the description on numeric variables}
 }
+\value{
+a data.frame object containing description of all numeric (doucle or integer) variable in the input data.
+}
 \description{
 Skim a dataset and return only numeric variables characteristics
+}
+\examples{
+skim_num(iris)
+skim_num(mtcars)
+
 }

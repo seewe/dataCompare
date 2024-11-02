@@ -1,9 +1,5 @@
 # Module UI
  
-#' @title mod_load_data_ui and mod_load_data_server
-#' @description A shiny module.
-#' @param id an id
- 
 mod_load_data_ui <- function(id) {
 	ns <- NS(id)
 	tabItem(
@@ -12,7 +8,10 @@ mod_load_data_ui <- function(id) {
 		
 		fluidRow(
 		  column(3,
-		         box(title = "Panel for input data (.rds, .csv or .tsv)", width = 12, 
+		         box(title = "Panel for input data (.rds, .csv or .tsv)", 
+		             width = 12,
+		             background = "black",
+		             collapsible = TRUE, 
 		             br(),
 		             radioGroupButtons(
 		               inputId = ns("file_separ"),
@@ -42,18 +41,28 @@ mod_load_data_ui <- function(id) {
 		         ),
 		  column(9,
 		         fluidRow(
-		            shinydashboard::box(title = "Numeric variables in data 1", width = 6,
+		            box(title = "Numeric variables in data 1", 
+		                                width = 6,
+		                                background = "black",
+		                                collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_1_num"))
 		           ),
-		           box(title = "Numeric variables in data 2", width = 6,
+		           box(title = "Numeric variables in data 2", 
+		               width = 6,
+		               background = "black",
+		               collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_2_num"))
 		           )
 		         ),
 		         fluidRow(
-		           shinydashboardPlus::box(title = "Character variables in data 1", width = 6,
+		           box(title = "Character variables in data 1", width = 6,
+		               background = "black",
+		               collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_1_char"))
 		           ),
 		           box(title = "Character variables in data 2", width = 6,
+		               background = "black",
+		               collapsible = TRUE,
 		               DT::DTOutput(ns("upload_data_2_char"))
 		           )
 		         )
@@ -68,7 +77,10 @@ mod_load_data_server <- function(input, output, session) {
 	ns <- session$ns
 	rv_loaded_data <- reactiveValues(
 	  comparison_summary_object = list(diff_percentage = NA_real_),
-	  click_on_run = 0
+	  click_on_run = 0,
+	  df1 = data.frame(),
+	  df2 = data.frame(),
+	  ids = "ID"
 	)
 	
 	# Define constants
@@ -106,18 +118,36 @@ mod_load_data_server <- function(input, output, session) {
 	observeEvent(input$run_comparison, {
 	  rv_loaded_data$comparison_summary_object <- compare_data_frame_object( upload_data_1(), upload_data_2(), input$idVariables )
 	  rv_loaded_data$click_on_run <- rv_loaded_data$click_on_run + 1
+	  rv_loaded_data$df1 = upload_data_1()
+	  rv_loaded_data$df2 = upload_data_2()
+	  rv_loaded_data$ids = input$idVariables
 	  
 	})
 	
 	# Indicator on dataframe comparison
 	output$comparatorBox <- renderValueBox({
 	  
-	  val_box_col <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "black", rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "fuchsia", .default = "green")
-	  val_box_ico <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "minus", rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "remove", .default = "ok")
+	  val_box_col <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "black", 
+	                           rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "fuchsia", 
+	                           .default = "green")
+	  val_box_ico <- case_when(is.na(rv_loaded_data$comparison_summary_object$diff_percentage)~ "minus", 
+	                           rv_loaded_data$comparison_summary_object$diff_percentage>0 ~ "remove", 
+	                           .default = "ok")
 	  
 	  valueBox(
-	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), "No comparison", paste0(rv_loaded_data$comparison_summary_object$diff_percentage, "%")  ),
-	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), "indicator of diference is Not Available", "Of cells are diferent"),
+	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), 
+	            "No comparison", 
+	            paste0(rv_loaded_data$comparison_summary_object$diff_percentage, "%")  ),
+	    ifelse( is.na(rv_loaded_data$comparison_summary_object$diff_percentage), 
+	            "indicator of diference is Not Available. 
+	             Please load data first, select IDs variables,
+	             then click on 'COMPARE' button to perform 
+	             the comparison.", 
+	            "Of cells are diferent. Please open the 
+	             two nexts tabs to read more details on 
+	             this differences percentage. open the fourth tab and
+	             click on 'RUN' to build the html report  
+	             then on 'SAVE' to download the html report"),
 	    icon = icon(val_box_ico, lib = "glyphicon"),
 	    color = val_box_col
 	  )

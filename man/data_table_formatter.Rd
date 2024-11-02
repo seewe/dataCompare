@@ -11,6 +11,12 @@ data_table_formatter(df, n_page = 5)
 
 \item{n_page}{number of rows to display per page}
 }
+\value{
+An object of class "htmlwidget" containing a formated data.frame to print on app UI
+}
 \description{
 Datatable formatter, to print on the screen
+}
+\examples{
+data_table_formatter(iris, 10)
 }

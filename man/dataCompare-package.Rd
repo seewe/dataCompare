@@ -4,12 +4,20 @@
 \name{dataCompare-package}
 \alias{dataCompare}
 \alias{dataCompare-package}
-\title{dataCompare: data Comparison}
+\title{dataCompare: A 'shiny' App to Compare Two Data Frames}
 \description{
-Application to compare two data frame and provide differences.
+A tool developed with the 'Golem' framework which provides an easier way to check cells differences between two data frames. The user provides two data frames for comparison, selects IDs variables identifying each row of input data, then clicks a button to perform the comparison. Several 'R' package functions are used to describe the data and perform the comparison in the server of the application. The main ones are comparedf() from 'arsenal' and skim() from 'skimr'. For more details see the description of comparedf() from the 'arsenal' package and that of skim() from the 'skimr' package.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/seewe/dataCompare}
+  \item Report bugs at \url{https://github.com/seewe/dataCompare/issues}
+}
+
 }
 \author{
-\strong{Maintainer}: Sergio Ewane \email{info@dataforknow.com}
+\strong{Maintainer}: Sergio Ewane Ebouele \email{info@dataforknow.com}
 
 }
 \keyword{internal}

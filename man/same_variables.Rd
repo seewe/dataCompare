@@ -11,6 +11,13 @@ same_variables(df1, df2)
 
 \item{df2}{The second dataset to use}
 }
+\value{
+a Character vector containing all variables names in both df1 and df2
+}
 \description{
 Detect common variables in two dataset
+}
+\examples{
+same_variables(iris, iris)
+same_variables(mtcars, mtcars)
 }

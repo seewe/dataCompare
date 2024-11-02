@@ -9,6 +9,6 @@ app_ui <- function() {
     body(),
     footer = footer(),
     scrollToTop = TRUE,
-    title = "dfComparator"
+    title = "Data Compare"
   )
 }

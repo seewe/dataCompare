@@ -1,2 +1,9 @@
+.Rhistory
 docs
 .Rproj.user
+cranReports/*
+.github
+inst/doc
+
+/doc/
+/Meta/

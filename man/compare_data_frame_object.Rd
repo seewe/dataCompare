@@ -11,8 +11,18 @@ compare_data_frame_object(df1, df2, id_var)
 
 \item{df2}{The second dataframe of the comparison}
 
-\item{id_var}{Tve vector of id variable to identify the observations}
+\item{id_var}{The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`}
+}
+\value{
+An object of class "comparedf" as made by the 'comparedf' S3 method is returned.
 }
 \description{
 Function which perform the comparison of dataframe
+}
+\examples{
+library(dplyr)
+compare_data_frame_object(
+     iris \%>\% dplyr::mutate(ID = row_number()), 
+     iris \%>\% dplyr::mutate(ID = row_number()), 
+     'ID')
 }
