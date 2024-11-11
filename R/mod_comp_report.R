@@ -36,7 +36,7 @@ mod_comp_report_ui <- function(id) {
  
 mod_comp_report_server <- function(input, output, session, RV = rv) {
   ns <- session$ns
-  shiny::addResourcePath("allHtml", "R:/data4know/dataCompare/inst/app/www")
+  shiny::addResourcePath("allHtml", "inst/app/www")
   
   # Run the report
   
