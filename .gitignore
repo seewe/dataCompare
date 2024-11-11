@@ -4,6 +4,6 @@ docs
 cranReports/*
 .github
 inst/doc
-
+*/www/*.html
 /doc/
 /Meta/
