@@ -1,3 +1,4 @@
+.Rhistory
 docs
 .Rproj.user
 cranReports/*
@@ -8,3 +9,6 @@ inst/doc
 renv
 renv.lock
 .gitignore
+*/www/*.html
+/doc/
+/Meta/

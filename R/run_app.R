@@ -1,6 +1,7 @@
 #' Run the dataCompare Shiny Application
 #' 
 #' @param ... list of arguments
+#' @returns No return value, launch the app
 #'
 #' @export
 #' @importFrom shiny runApp

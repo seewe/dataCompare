@@ -9,6 +9,9 @@ run_data_compare_app(...)
 \arguments{
 \item{...}{list of arguments}
 }
+\value{
+No return value, launch the app
+}
 \description{
 Run the dataCompare Shiny Application
 }

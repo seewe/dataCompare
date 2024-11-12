@@ -1,9 +1,5 @@
 # Module UI
  
-#' @title mod_intro_ui and mod_intro_server
-#' @description A shiny module.
-#' @param id an id
- 
 mod_intro_ui <- function(id) {
 	ns <- NS(id)
 	tabItem(
@@ -18,40 +14,67 @@ mod_intro_ui <- function(id) {
 			         width = NULL, 
 			         background = "black",
 			         collapsible = TRUE,
-			         p("This tab allows user to load data and run the comparison of loaded data.", br(),
-			           strong("INPUTS : "),"Upload inputs help to load data in the app. The extensions accepted here are :", br(),
+			         p("This tab allows the user to load data and perform comparison of loaded data.", br(),
+			           strong("INPUTS : "),"Upload inputs help to load data into the application. The extensions accepted here are :", br(),
 			           strong(".csv, .tsv and .rds"), br(),
-			           "After the user load the data, he can heat on '>COMPARE' button to run the comparison. ", br(),
-			           "The value box bellow the input box will shows the percentage of difference and will be colored acording to the value.", br(),
-			           strong("OUTPUTS : "),"A high level description of data loaded through the uploader. Here, user may find :", br(),
-			           "variables names, variables types, the complete rate, the distribution or the number of unique values.", br()
+			           "After the user has loaded the data, he can press the '>COMPARE' button to perform the comparison. ", br(),
+			           "The value box below the input box will show the percentage of difference and will be coloured according to the value.", br(),
+			           strong("OUTPUTS : "),"A high level description of the data loaded by the uploader. Here the user can find:", br(),
+			           "variable names, variable types, the complete set, the distribution or the number of unique values.", br()
 			           )
 			       ),
 			       box(
-			         title = "Comparison description", 
+			         title = "Description of Comparison section", 
 			         width = NULL, 
 			         background = "black",
 			         collapsible = TRUE,
-			         p("This tab allows user to read the first results of the comparison.", br(),
-			           strong("OUTPUTS : "),"several tables are diplayed here :", br(),
-			           " -> table of input data dimension, which shows the number of rows and columns of data to compare", br(),
-			           " -> table of comparison summary, which shows values of comparison indicator", br(),
-			           " -> table of number of difference by variable, which shows the number of difference by variables in data", br(),
-			           " -> table of variables not compared, which shows the variables of each input data which are not compare to others.", br()
+			         p("This tab allows the user to read the first results of the comparison.", br(),
+			           strong("OUTPUTS : "),"Several tables are displayed here:", br(),
+			           " -> Input data dimension table, which shows the number of rows and columns of data to be compared", br(),
+			           " -> Comparison summary table, which shows the values of the comparison indicator", br(),
+			           "Number of differences by variable table, which shows the number of differences by variables in the data", br(),
+			           "table of variables not compared, which shows the variables of each input data that are not compared with others", br()
 			         )
 			       ),
 			       box(
-			         title = "Details on difference", 
+			         title = "Differences details section", 
 			         width = NULL, 
 			         background = "black",
 			         collapsible = TRUE,
-			         p("This tab allows user to read the differences between input data cell by cell.", br(),
-			           strong("OUTPUTS : "),"several tables are diplayed here :", br(),
-			           " -> table of attributs, which shows non identical attributs between the two data", br(),
-			           " -> table of not shared variables, which shows variables in X but not in Y and present in Y but not in X", br(),
-			           " -> table of not shared observations, which shows the observations not shared between the two data", br(),
-			           " -> table of detected diferences, which shows all the diferences in the data row by row.", br()
+			         p("This tab allows the user to read the differences between the input data, cell by cell.", br(),
+			           strong("OUTPUTS : "),"Several tables are shown here:", br(),
+			           " -> Table of attributes showing the non-identical attributes between the two data", br(),
+			           " -> table showing the variables present on X but not on Y and on Y but not on X", br(),
+			           " -> Non-shared observations table, showing the observations not shared between the two data", br(),
+			           " -> detected differences table, showing all differences in the data row by row", br()
 			         )
+			       ),
+			       box(
+			         title = "Comparison report", 
+			         width = NULL, 
+			         background = "black",
+			         collapsible = TRUE,
+			         p("This tab allows the user to compile the html report and download it in his local storage.", br(),
+			           strong("INPUT : "),"Several fields are shown here:", br(),
+			           " -> Title of the report : User need to provide a title to the report.", br(),
+			           " -> Author name : user need to provide his name here", br(),
+			           " -> Report context : User need to provide a small paragraph which describe the context or purpose of the report", br(),
+			           strong("OUTPUTS : "),"After clicking on 'RUN' button, the html report will appear at 
+			           the middle of the boby and a 'SAVE' button will appear to download the report.", br(),
+			           strong("NOTE : "), "This report is interactive. user can update it by entering new values and click on 'RUN'."
+			         )
+			       ),
+			       box(
+			         title = "More ressources ...", 
+			         width = NULL, 
+			         background = "black",
+			         collapsible = TRUE,
+			         tags$a("'dataCompare' github repository", target = "_blank", href = "https://github.com/seewe/dataCompare/tree/main"), br(),
+			         tags$a("'comparedf' function from 'arsenal' package", target = "_blank", href = "https://mayoverse.github.io/arsenal/articles/comparedf.html"), br(),
+			         tags$a("'arsenal' package page", target = "_blank", href = "https://mayoverse.github.io/arsenal/index.html"), br(),
+			         tags$a("'skimr' package page", target = "_blank", href = "https://cran.r-project.org/web/packages/skimr/vignettes/skimr.html"), br(),
+			         tags$a("'golemverse' main page", target = "_blank", href = "https://golemverse.org/"), br(),
+			         tags$a("'golem' book", target = "_blank", href = "https://engineering-shiny.org/"), br(),
 			       )
 			       
 			       )

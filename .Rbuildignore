@@ -16,3 +16,8 @@
 ^\.dockerignore$
 ^\./deploy$
 ^cran-comments\.md$
+^doc$
+^Meta$
+^lastMiKTeXException
+^.github
+^CRAN-SUBMISSION$

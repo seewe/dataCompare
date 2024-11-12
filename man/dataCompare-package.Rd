@@ -4,9 +4,9 @@
 \name{dataCompare-package}
 \alias{dataCompare}
 \alias{dataCompare-package}
-\title{dataCompare: Data Comparison}
+\title{dataCompare: A 'shiny' App to Compare Two Data Frames}
 \description{
-A shiny app use to compare two data frame and provide more details on differences.
+A tool developed with the 'Golem' framework which provides an easier way to check cells differences between two data frames. The user provides two data frames for comparison, selects IDs variables identifying each row of input data, then clicks a button to perform the comparison. Several 'R' package functions are used to describe the data and perform the comparison in the server of the application. The main ones are comparedf() from 'arsenal' and skim() from 'skimr'. For more details see the description of comparedf() from the 'arsenal' package and that of skim() from the 'skimr' package.
 }
 \seealso{
 Useful links:

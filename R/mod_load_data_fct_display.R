@@ -1,6 +1,6 @@
 #' Skim a dataset and return only numeric variables characteristics
 #' @param the_data Data on which the skim function will apply the description on numeric variables
-#' @return a dataframe
+#' @returns a data.frame object containing description of all numeric (doucle or integer) variable in the input data.
 #' @examples
 #' skim_num(iris)
 #' skim_num(mtcars)
@@ -24,7 +24,7 @@ skim_num <- function(the_data){
 
 #' Skim a dataset and return only characters variables characteristics
 #' @param the_data Data on which the skim function will apply the description on character variables
-#' @returns a dataframe
+#' @returns a data.frame object containing description of all character (factor, character or date) variable in the input data.
 #' @examples
 #' skim_char(iris)
 #' skim_char(mtcars)
@@ -49,6 +49,7 @@ skim_char <- function(the_data){
 #' Detect common variables in two dataset
 #' @param df1 the first dataset to use
 #' @param df2 The second dataset to use
+#' @returns a Character vector containing all variables names in both df1 and df2
 #' @examples 
 #' same_variables(iris, iris)
 #' same_variables(mtcars, mtcars)
@@ -93,11 +94,7 @@ same_variables <- function(df1, df2){
 }
 
 
-#' read data loaded from an input file
-#' @param input_file_data the link of the data to load
-#' @param file_sep the separator used to read the csv data. Possible values are :
-#'                 semi column";", comma"," or column":"
-#' @return a dataframe read from user input or a validation message
+# read data loaded from an input file
 
 read_loaded_df <- function(input_file_data, file_sep = ";"){
   ext <- tools::file_ext(input_file_data$name)
@@ -113,7 +110,7 @@ read_loaded_df <- function(input_file_data, file_sep = ";"){
 #' Datatable formatter, to print on the screen
 #' @param df dataframe to format
 #' @param n_page number of rows to display per page
-#' @return a formated dataframe to print on UI
+#' @return An object of class "htmlwidget" containing a formated data.frame to print on app UI
 #' @examples 
 #' data_table_formatter(iris, 10)
 #' @export
@@ -126,6 +123,7 @@ data_table_formatter <- function(df, n_page = 5){
               options = list(
                 dom = 'ftp',
                 pageLength = n_page,
+                columnDefs = list(list(className = 'dt-center', targets = "_all")),
                 initComplete = JS(
                   "function(settings, json) {",
                   "$(this.api().table().header()).css({'background-color': '#649191', 'color': '#000'});",
@@ -139,8 +137,8 @@ data_table_formatter <- function(df, n_page = 5){
 #' Function which perform the comparison of dataframe
 #' @param df1 The first dataframe of the comparison
 #' @param df2 The second dataframe of the comparison
-#' @param id_var Tve vector of id variable to identify the observations
-#' @return a list of comparison output
+#' @param id_var The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`
+#' @return An object of class "comparedf" as made by the 'comparedf' S3 method is returned.
 #' @examples 
 #' library(dplyr)
 #' compare_data_frame_object(
