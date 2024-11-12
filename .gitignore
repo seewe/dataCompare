@@ -7,3 +7,6 @@ inst/doc
 */www/*.html
 /doc/
 /Meta/
+.Rprofile
+renv
+renv.lock
