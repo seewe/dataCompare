@@ -4,4 +4,7 @@ cranReports/*
 .github
 inst/doc
 .Rhistory
-
+.Rprofile
+renv
+renv.lock
+.gitignore
