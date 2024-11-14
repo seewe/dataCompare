@@ -7,3 +7,8 @@
 # dataCompare 1.0.2
 
 * fix an absolute link in the mod_comp_report.R file.
+
+
+# dataCompare 1.0.3
+
+* fix the module which print the comparator report in the shiny app.

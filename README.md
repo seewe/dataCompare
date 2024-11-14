@@ -1,7 +1,13 @@
 dataCompare
 ================
 Sergio, Ewane Ebouele
-2024-10-31 01:02:03.153755
+2024-11-13 22:33:03 EST
+
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/dataCompare)](https://CRAN.R-project.org/package=dataCompare)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Launch binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/seewe/dataCompare/main)
+<!-- badges: end -->
 
 # Presentation
 
