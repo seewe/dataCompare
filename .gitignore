@@ -12,3 +12,6 @@ renv.lock
 */www/*.html
 /doc/
 /Meta/
+.Rprofile
+renv
+renv.lock

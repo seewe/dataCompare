@@ -20,6 +20,11 @@ output:
   
 ---
 
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/dataCompare)](https://CRAN.R-project.org/package=dataCompare)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+<!-- badges: end -->
+
 
 ```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
 library(dplyr)
