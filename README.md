@@ -9,6 +9,10 @@ Sergio, Ewane Ebouele
 [![Launch binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/seewe/dataCompare/main)
 <!-- badges: end -->
 
+# Package vignette
+
+[access the vignette here.](https://cran.r-project.org/web/packages/dataCompare/vignettes/dataCompare.html)
+
 # Presentation
 
 A shiny app used to check values differencies between two dataframe.
