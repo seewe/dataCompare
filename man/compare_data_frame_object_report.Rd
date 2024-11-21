@@ -18,13 +18,13 @@ compare_data_frame_object_report(
 
 \item{df2}{The second dataframe of the comparison}
 
+\item{ids}{The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`}
+
 \item{report_title}{A character string which contains the title of the report}
 
 \item{report_author}{A character string which contains the name of the report author}
 
 \item{report_context}{A character string containing the context of the report}
-
-\item{id_var}{The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`}
 }
 \value{
 null.

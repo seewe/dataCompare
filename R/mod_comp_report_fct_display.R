@@ -1,7 +1,7 @@
 #' run the rmarkdown report of the data comparison and save it in an external directory
 #' @param df1 The first dataframe of the comparison
 #' @param df2 The second dataframe of the comparison
-#' @param id_var The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`
+#' @param ids The character vector containing id variables which identify the observations in dataframe `df1` and datafram `df2`
 #' @param report_title A character string which contains the title of the report
 #' @param report_author A character string which contains the name of the report author
 #' @param report_context A character string containing the context of the report

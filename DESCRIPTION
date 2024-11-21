@@ -27,19 +27,15 @@ Imports:
     explore,
     golem,
     htmltools,
-    lubridate,
     magrittr,
-    pins,
     shiny,
     shinycssloaders,
     shinydashboard,
     shinydashboardPlus,
-    shinyjs,
     shinyWidgets,
     skimr,
     tools,
-    utils,
-    vroom
+    utils
 Suggests: 
     knitr,
     rmarkdown,
