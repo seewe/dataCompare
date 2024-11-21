@@ -17,14 +17,15 @@ Sergio, Ewane Ebouele
 
 A shiny app used to check values differencies between two dataframe.
 This app has four main tabs :  
-![dataCompare](inst/app/www/dfComparator.png)
+![dataCompare](inst/app/www/dfComparator_vignette.png)
 
 # Load data section
 
 This tab allows user to load data and run the comparison of loaded
 data.  
 INPUTS : Upload inputs help to load data in the app. The extensions
-accepted here are : .csv, .tsv and .rds  
+accepted here are : .csv, .tsv and .rds. The maximum size of loaded files
+is 50Mb.  
 After the user load the data, he can heat on ‘\>COMPARE’ button to run
 the comparison. The value box bellow the input box will shows the
 percentage of difference and will be colored according to the value.  

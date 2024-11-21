@@ -16,6 +16,7 @@ utils::globalVariables(c(".", "rv", 'Variable', 'Type', 'numeric.mean', 'statist
 #' @importFrom dplyr ungroup
 #' @importFrom DT datatable
 #' @importFrom DT JS
+#' @importFrom explore describe
 #' @importFrom golem add_resource_path
 #' @importFrom htmltools a
 #' @importFrom htmltools br
@@ -24,8 +25,6 @@ utils::globalVariables(c(".", "rv", 'Variable', 'Type', 'numeric.mean', 'statist
 #' @importFrom htmltools strong
 #' @importFrom htmltools tagList
 #' @importFrom htmltools tags
-#' @importFrom lubridate hour
-#' @importFrom pins pin
 #' @importFrom shiny actionButton
 #' @importFrom shiny callModule
 #' @importFrom shiny column
@@ -42,6 +41,9 @@ utils::globalVariables(c(".", "rv", 'Variable', 'Type', 'numeric.mean', 'statist
 #' @importFrom shiny span
 #' @importFrom shiny uiOutput
 #' @importFrom shiny validate
+#' @importFrom shinycssloaders hidePageSpinner
+#' @importFrom shinycssloaders showPageSpinner
+#' @importFrom shinycssloaders withSpinner
 #' @importFrom shinydashboard box
 #' @importFrom shinydashboard dashboardBody
 #' @importFrom shinydashboard menuItem
@@ -55,12 +57,10 @@ utils::globalVariables(c(".", "rv", 'Variable', 'Type', 'numeric.mean', 'statist
 #' @importFrom shinydashboardPlus dashboardHeader
 #' @importFrom shinydashboardPlus dashboardPage
 #' @importFrom shinydashboardPlus dashboardSidebar
-#' @importFrom shinyjs alert
 #' @importFrom shinyWidgets actionBttn
 #' @importFrom shinyWidgets radioGroupButtons
 #' @importFrom skimr skim
 #' @importFrom utils read.csv2
 #' @importFrom utils read.table
-#' @importFrom vroom spec
 ## usethis namespace: end
 NULL

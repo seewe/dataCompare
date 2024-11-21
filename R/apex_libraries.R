@@ -2,20 +2,18 @@
 pkgs <- c(
   "devtools",
   "dplyr",
-  "lubridate",
   "golem",
-  "pins",
   "shiny",
-  "shinyjs",
   "shinyWidgets",
   "shinydashboard",
   "shinydashboardPlus",
   "skimr",
-  "vroom",
   "DT",
   "data.table",
   "arsenal",
   "utils",
+  "explore",
+  "shinycssloaders",
   "htmltools"
 )
 

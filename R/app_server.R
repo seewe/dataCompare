@@ -1,6 +1,8 @@
 
 app_server <- function(input, output, session) {
   
+  options(shiny.maxRequestSize = 50*1024^2)
+  
   callModule(mod_intro_server, "intro_ui_1")
   
   rv <- reactiveValues(
