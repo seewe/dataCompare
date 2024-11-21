@@ -11,7 +11,7 @@ Sergio, Ewane Ebouele
 
 # Package vignette
 
-[access the vignette here.](https://cran.r-project.org/web/packages/dataCompare/vignettes/dataCompare.html)
+[access the CRAN page here.](https://CRAN.R-project.org/package=dataCompare)
 
 # Presentation
 
