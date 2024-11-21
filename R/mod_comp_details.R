@@ -8,13 +8,17 @@ mod_comp_details_ui <- function(id) {
 		       box(title = "Description of difference by variable", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("diffs_byvar_table")))
+		           DT::DTOutput(ns("diffs_byvar_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           )
 		),
 		column(8,
 		       box(title = "Description of differences cell by cell", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("diffs_table")))
+		           DT::DTOutput(ns("diffs_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           )
 		)
 	)
 }

@@ -45,6 +45,9 @@ mod_comp_report_server <- function(input, output, session, RV = rv) {
   # Run the report
   
   observeEvent(input$run_report, {
+    
+    shinycssloaders::showPageSpinner()
+    
     params <- list(df1_input = RV()$df1,
                    df2_input = RV()$df2,
                    id_input = RV()$ids,
@@ -76,6 +79,8 @@ mod_comp_report_server <- function(input, output, session, RV = rv) {
       )
     })
     
+    shinycssloaders::hidePageSpinner()
+    
   })
   
   # download the report
@@ -98,6 +103,7 @@ mod_comp_report_server <- function(input, output, session, RV = rv) {
                         envir = new.env(parent = globalenv())
       )
     }
+    
   )
   
 }

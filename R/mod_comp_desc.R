@@ -8,32 +8,44 @@ mod_comp_desc_ui <- function(id) {
 		       box(title = "Dimension of tables to compare", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("frame_summary_table"))),
+		           DT::DTOutput(ns("frame_summary_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           ),
 		       box(title = "Comparison summary table", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("comparison_summary_table")))
+		           DT::DTOutput(ns("comparison_summary_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           )
 		       ),
 		column(6,
 		       box(title = "Variables not compared", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("vars_nc_table"))),
+		           DT::DTOutput(ns("vars_nc_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           ),
 		       br(),
 		       box(title = "Non-identical attributes", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("attrs_table"))),
+		           DT::DTOutput(ns("attrs_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           ),
 		       br(),
 		       box(title = "Variable not shared", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("vars_ns_table"))),
+		           DT::DTOutput(ns("vars_ns_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           ),
 		       br(),
 		       box(title = "Observations not shared", width = 12,
 		           background = "black",
 		           collapsible = TRUE,
-		           DT::DTOutput(ns("obs_table")))
+		           DT::DTOutput(ns("obs_table")) %>% 
+		             shinycssloaders::withSpinner(.)
+		           )
 		       )
 	)
 }
