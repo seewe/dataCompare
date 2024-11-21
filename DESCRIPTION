@@ -1,6 +1,6 @@
 Package: dataCompare
 Title: A 'shiny' App to Compare Two Data Frames
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: 
     person("Sergio", "Ewane Ebouele", , "info@dataforknow.com", role = c("aut", "cre"))
 Description: A tool developed with the 'Golem' framework which provides 
@@ -24,20 +24,18 @@ Imports:
     devtools,
     dplyr,
     DT,
+    explore,
     golem,
     htmltools,
-    lubridate,
     magrittr,
-    pins,
     shiny,
+    shinycssloaders,
     shinydashboard,
     shinydashboardPlus,
-    shinyjs,
     shinyWidgets,
     skimr,
     tools,
-    utils,
-    vroom
+    utils
 Suggests: 
     knitr,
     rmarkdown,

@@ -91,21 +91,19 @@ usethis::use_import_from("shinydashboard",
                            "sidebarMenu", "menuItem"))
 usethis::use_import_from("shinydashboardPlus",
                          c("dashboardPage", "dashboardFooter", "dashboardHeader", "dashboardSidebar"))
-usethis::use_import_from("lubridate", c("hour"))
+usethis::use_import_from("shinycssloaders", c("withSpinner", "showPageSpinner", "hidePageSpinner"))
 usethis::use_import_from("dplyr", c("between", "select", "filter", "case_when", "ungroup", "inner_join", "ends_with"))
 usethis::use_import_from("DT", c("datatable", "JS"))
 usethis::use_import_from("utils", c("read.csv2", "read.table"))
 usethis::use_import_from("skimr", c("skim"))
 usethis::use_import_from("data.table", c("month"))
 usethis::use_import_from("devtools", c("document"))
-usethis::use_import_from("pins", c("pin"))
 usethis::use_import_from("shinyWidgets", c("actionBttn", "radioGroupButtons"))
-usethis::use_import_from("shinyjs", c("alert"))
-usethis::use_import_from("vroom", c("spec"))
 
 usethis::use_import_from("shiny", c("callModule", "reactiveValues", "observeEvent", "req", "reactive", "span", "validate", 
                                     "NS", "column", "fluidRow", "renderUI", "icon", "fileInput", "uiOutput", "actionButton", "shinyApp"))
 usethis::use_import_from("htmltools", c("tagList", "tags", "a", "img", "br", "p", "strong"))
+usethis::use_import_from("explore", c("describe"))
 usethis::use_import_from("golem", c("add_resource_path"))
 
 utils::globalVariables(".")

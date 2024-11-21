@@ -24,12 +24,12 @@ mod_load_data_ui <- function(id) {
 		             ),
 		             br(),
 		             fileInput(inputId = ns("upload_data_1"), 
-		                       label = "Upload the first data for the comparison",
+		                       label = "Upload the first data for the comparison (size <= 30 Mb)",
 		                       buttonLabel = "Upload...", 
 		                       accept = c(".rds, ", ".csv", ".tsv")),
 		             br(),
 		             fileInput(inputId = ns("upload_data_2"), 
-		                       label = "Upload the second data for the comparison", 
+		                       label = "Upload the second data for the comparison (size <= 30 Mb)", 
 		                       buttonLabel = "Upload...", 
 		                       accept = c(".rds, ", ".csv", ".tsv")),
 		             br(),
@@ -37,7 +37,7 @@ mod_load_data_ui <- function(id) {
 		             br(),
 		             actionButton(ns("run_comparison"), "COMPARE", icon = icon("play"))
 		             ),
-		         valueBoxOutput(ns("comparatorBox"), width = 12)
+		           valueBoxOutput(ns("comparatorBox"), width = 12)
 		         ),
 		  column(9,
 		         fluidRow(
@@ -45,25 +45,29 @@ mod_load_data_ui <- function(id) {
 		                                width = 6,
 		                                background = "black",
 		                                collapsible = TRUE,
-		               DT::DTOutput(ns("upload_data_1_num"))
+		               DT::DTOutput(ns("upload_data_1_num")) %>% 
+		                 shinycssloaders::withSpinner(.)
 		           ),
 		           box(title = "Numeric variables in data 2", 
 		               width = 6,
 		               background = "black",
 		               collapsible = TRUE,
-		               DT::DTOutput(ns("upload_data_2_num"))
+		               DT::DTOutput(ns("upload_data_2_num")) %>% 
+		                 shinycssloaders::withSpinner(.)
 		           )
 		         ),
 		         fluidRow(
 		           box(title = "Character variables in data 1", width = 6,
 		               background = "black",
 		               collapsible = TRUE,
-		               DT::DTOutput(ns("upload_data_1_char"))
+		               DT::DTOutput(ns("upload_data_1_char")) %>% 
+		                 shinycssloaders::withSpinner(.)
 		           ),
 		           box(title = "Character variables in data 2", width = 6,
 		               background = "black",
 		               collapsible = TRUE,
-		               DT::DTOutput(ns("upload_data_2_char"))
+		               DT::DTOutput(ns("upload_data_2_char")) %>% 
+		                 shinycssloaders::withSpinner(.)
 		           )
 		         )
 		)
@@ -116,12 +120,13 @@ mod_load_data_server <- function(input, output, session) {
 	# Comparison summary object
 	
 	observeEvent(input$run_comparison, {
+	 shinycssloaders::showPageSpinner()
 	  rv_loaded_data$comparison_summary_object <- compare_data_frame_object( upload_data_1(), upload_data_2(), input$idVariables )
 	  rv_loaded_data$click_on_run <- rv_loaded_data$click_on_run + 1
 	  rv_loaded_data$df1 = upload_data_1()
 	  rv_loaded_data$df2 = upload_data_2()
 	  rv_loaded_data$ids = input$idVariables
-	  
+	  shinycssloaders::hidePageSpinner()
 	})
 	
 	# Indicator on dataframe comparison
@@ -155,22 +160,36 @@ mod_load_data_server <- function(input, output, session) {
 	
 	# render numeric Skim on the first loaded data
 	output$upload_data_1_num <- DT::renderDT({
-	  skim_num(upload_data_1()) %>% data_table_formatter(.)
+	  upload_data_1() %>% 
+	    explore::describe()  %>% 
+	    filter(!is.na(`mean`)) %>% 
+	    data_table_formatter(.)
 	})
 	
 	# render character Skim on the first loaded data
 	output$upload_data_1_char <- DT::renderDT({
-	    skim_char(upload_data_1()) %>% data_table_formatter(.)
+	   upload_data_1() %>% 
+	    explore::describe() %>% 
+	    filter(is.na(`mean`)) %>% 
+	    select(-c(min, mean, max)) %>% 
+	    data_table_formatter(.)
 	})
 	
 	# render numeric Skim on the second loaded data
 	output$upload_data_2_num <- DT::renderDT({
-	  skim_num(upload_data_2()) %>%  data_table_formatter(.)
+	  upload_data_2() %>% 
+	    explore::describe() %>%
+	    filter(!is.na(`mean`)) %>% 
+	    data_table_formatter(.)
 	})
 	
 	# render character Skim on the second loaded data
 	output$upload_data_2_char <- DT::renderDT({
-	  skim_char(upload_data_2()) %>% data_table_formatter(.)
+	  upload_data_2() %>% 
+	    explore::describe() %>% 
+	    filter(is.na(`mean`)) %>% 
+	    select(-c(min, mean, max)) %>% 
+	    data_table_formatter(.)
 	})
 	
 	return(rv_loaded_data)
