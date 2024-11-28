@@ -152,7 +152,7 @@ mod_load_data_server <- function(input, output, session) {
 	             two nexts tabs to read more details on 
 	             this differences percentage. open the fourth tab and
 	             click on 'RUN' to build the html report  
-	             then on 'SAVE' to download the html report"),
+	             then on 'DOWNLOAD' to download the html report"),
 	    icon = icon(val_box_ico, lib = "glyphicon"),
 	    color = val_box_col
 	  )
