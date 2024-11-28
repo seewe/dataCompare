@@ -26,6 +26,11 @@ compare_data_frame_object_report <- function(df1,
                                              report_author = "Author name here",
                                              report_context = "Add a small text here to explain the context."
 ){
+  report_template <- template_content
+  template_temp_report <- tempfile(fileext = ".Rmd")
+  writeLines(report_template, template_temp_report)
+  
+  output_temp_file <- tempfile(fileext = ".html")
   
   params <- list(df1_input = df1,
                  df2_input = df2,
@@ -33,15 +38,13 @@ compare_data_frame_object_report <- function(df1,
                  title_input = report_title,
                  author_input = report_author,
                  context_input = report_context)
-  rmarkdown::render(system.file("app", "www", "Comparison_report.Rmd", package = "dataCompare"), 
-                    output_file = paste0("Comparison_report.html"), 
+  rmarkdown::render(input = template_temp_report, 
+                    output_file = output_temp_file, 
                     params = params,
-                    envir = new.env(parent = globalenv())
-  )
+                    quiet = FALSE,
+                    envir = new.env(parent = globalenv()))
   
-  cat(paste0("----------------------------------------------------------------\n",
-             "Find your html report here : ", system.file("app", "www", "Comparison_report.html", package = "dataCompare"), "\n",
-             "----------------------------------------------------------------\n")
-      )
-  
+  # clean the temporary file
+  unlink(c(template_temp_report))
+  return(output_temp_file)
 }
