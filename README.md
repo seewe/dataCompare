@@ -5,9 +5,12 @@ Sergio, Ewane Ebouele
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/dataCompare)](https://CRAN.R-project.org/package=dataCompare)
+[![](https://cranlogs.r-pkg.org/badges/dataCompare)](https://CRAN.R-project.org/package=dataCompare)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/dataCompare)](https://CRAN.R-project.org/package=dataCompare)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Launch binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/seewe/dataCompare/main)
 <!-- badges: end -->
+
+![](inst/app/www/dfComparator_vignette.png){ width=30% }
 
 # Package vignette
 
@@ -15,9 +18,10 @@ Sergio, Ewane Ebouele
 
 # Presentation
 
-A shiny app used to check values differencies between two dataframe.
-This app has four main tabs :  
-![dataCompare](inst/app/www/dfComparator_vignette.png)
+An R package which compare two dataframes values through a shiny app or inlines
+codes. The Shiny app has four main tabs described bellow and the vignette, you 
+can find [here](https://CRAN.R-project.org/package=dataCompare), illustrates the 
+use of inline codes.  
 
 # Load data section
 
