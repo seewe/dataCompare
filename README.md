@@ -10,7 +10,7 @@ Sergio, Ewane Ebouele
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
-![](inst/app/www/dfComparator_vignette.png)
+![](inst/app/www/dfComparatorhex.png)
 
 # Package vignette
 
